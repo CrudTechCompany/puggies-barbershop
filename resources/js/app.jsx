@@ -1,8 +1,28 @@
 import "./bootstrap";
 import ReactDOM from "react-dom/client";
+import style from "./App.module.css";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Body from "../components/Body/Body";
+import { useState } from "react";
+import MobileMenu from "../components/MobileMenu/MobileMenu";
 
 const App = () => {
-    return <div>HELLO WORLD 111111</div>;
+    const [mobileMenuState, setMobileMenuState] = useState(false);
+    const onClickMenuHandler = () => {
+        setMobileMenuState((prev) => !prev);
+    }
+    return (
+        <div
+            className={style["container"]}
+            style={{ position: mobileMenuState ? "fixed" : "relative" }}
+        >
+            <Header onClickMenuHandler={onClickMenuHandler}/>
+            <Body />
+            <Footer />
+            {mobileMenuState && <MobileMenu onClickMenuHandler={onClickMenuHandler}/>}
+        </div>
+    );
 };
 
 export default App;

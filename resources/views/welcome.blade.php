@@ -7,13 +7,14 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
 
         @viteReactRefresh
-        @vite('resources/js/app.jsx')
+        @vite('resources/js/App.jsx')
         
     </head>
-    <body>
+    <body style="margin:0">
         <div id="root"><div>
     </body>
 </html>
