@@ -33,6 +33,7 @@
 
 .description-block img{
     width: 100%;
+    max-width: 570px;
     height: min-content;
     max-height: 600;
 }

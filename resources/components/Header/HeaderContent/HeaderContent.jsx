@@ -3,7 +3,6 @@ import logo from "./../../../assets/logo.png";
 import inst_icon from "./../../../assets/instagram.svg";
 import menu_icon from "./../../../assets/burger_menu.png";
 import { Link } from "react-scroll";
-import { useState } from "react";
 
 const HeaderContent = (props) => {
     return (
@@ -12,7 +11,7 @@ const HeaderContent = (props) => {
                 <Link
                     className={style["header-content__item"]}
                     to="about-us"
-                    smooth={true}
+                    smooth="true"
                     duration={500}
                 >
                     O nas
@@ -20,7 +19,7 @@ const HeaderContent = (props) => {
                 <Link
                     className={style["header-content__item"]}
                     to="team"
-                    smooth={true}
+                    smooth="true"
                     duration={500}
                 >
                     Zespół
@@ -28,20 +27,23 @@ const HeaderContent = (props) => {
                 <Link
                     className={style["header-content__item"]}
                     to="study"
-                    smooth={true}
+                    smooth="true"
                     duration={500}
                 >
                     Szkolenia
                 </Link>
             </div>
-            <button className={style["logo-button"]}>
-                <img src={logo} alt="" />
-            </button>
+            <Link to="/">
+                <button className={style["logo-button"]}>
+                    <img src={logo} alt="" />
+                </button>
+            </Link>
+
             <div className={style["social-block"]}>
                 <Link
                     className={style["header-content__item"]}
                     to="services"
-                    smooth={true}
+                    smooth="true"
                     duration={500}
                 >
                     Usługi
@@ -61,10 +63,12 @@ const HeaderContent = (props) => {
                     </button>
                 </a>
             </div>
-            <button className={style["menu-button"]} onClick={props.onClickMenuHandler}>
+            <button
+                className={style["menu-button"]}
+                onClick={props.onClickMenuHandler}
+            >
                 <img src={menu_icon} alt="" />
             </button>
-            
         </div>
     );
 };

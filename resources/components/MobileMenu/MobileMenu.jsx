@@ -23,38 +23,38 @@ const MobileMenu = (props) => {
             <div className={style["link-block"]}>
                 <Link
                     className={style["link-item"]}
-                    to="about-us"
-                    smooth={true}
-                    duration={500}
                     onClick={props.onClickMenuHandler}
+                    to="about-us"
+                    smooth="true"
+                    duration={500}
                 >
                     O nas
                 </Link>
 
                 <Link
                     className={style["link-item"]}
-                    to="team"
-                    smooth={true}
-                    duration={500}
                     onClick={props.onClickMenuHandler}
+                    to="team"
+                    smooth="true"
+                    duration={500}
                 >
                     Zespół
                 </Link>
                 <Link
                     className={style["link-item"]}
-                    to="study"
-                    smooth={true}
-                    duration={500}
                     onClick={props.onClickMenuHandler}
+                    to="study"
+                    smooth="true"
+                    duration={500}
                 >
                     Szkolenia
                 </Link>
                 <Link
                     className={style["link-item"]}
-                    to="services"
-                    smooth={true}
-                    duration={500}
                     onClick={props.onClickMenuHandler}
+                    to="services"
+                    smooth="true"
+                    duration={500}
                 >
                     Usługi
                 </Link>

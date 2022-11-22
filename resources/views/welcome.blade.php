@@ -15,6 +15,7 @@
         
     </head>
     <body style="margin:0">
+        <div id="mobile-menu"></div>
         <div id="root"><div>
     </body>
 </html>

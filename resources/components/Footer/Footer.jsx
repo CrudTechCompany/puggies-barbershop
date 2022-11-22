@@ -2,32 +2,65 @@ import style from "./Footer.module.css";
 import logo from "./../../assets/logo.png";
 import inst_icon from "./../../assets/instagram.svg";
 import facebook from "./../../assets/facebook.svg";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
+    const onClickFooterLinkHandler = (event) => {
+        switch (event.target.text) {
+            case "O nas": {
+                document
+                    .getElementById("about-us")
+                    .scrollIntoView({ behavior: "smooth" });
+                break;
+            }
+            case "Zespół": {
+                document
+                    .getElementById("team")
+                    .scrollIntoView({ behavior: "smooth" });
+                break;
+            }
+            case "Szkolenia": {
+                document
+                    .getElementById("study")
+                    .scrollIntoView({ behavior: "smooth" });
+                break;
+            }
+            case "Usługi": {
+                document
+                    .getElementById("services")
+                    .scrollIntoView({ behavior: "smooth" });
+                break;
+            }
+        }
+    };
     return (
         <footer className={style["footer"]}>
             <div className={style["footer-content"]}>
                 <div className={style["content-block"]}>
-                    <Link to="header" smooth={true} duration={500}>
+                    <ScrollLink
+                        style={{ width: "min-content" }}
+                        to="header"
+                        smooth="true"
+                        duration={500}
+                    >
                         <button className={style["logo-button"]}>
                             <img src={logo} alt="" />
                         </button>
-                    </Link>
-
+                    </ScrollLink>
                     <div className={style["link-block"]}>
-                        <Link to="about-us" smooth={true} duration={500}>
-                            <span>O nas</span>
-                        </Link>
-                        <Link to="team" smooth={true} duration={500}>
-                            <span>Zespół</span>
-                        </Link>
-                        <Link to="study" smooth={true} duration={500}>
-                            <span>Szkolenia</span>
-                        </Link>
-                        <Link to="services" smooth={true} duration={500}>
-                            <span>Usługi</span>
-                        </Link>
+                        <ScrollLink to="about-us" smooth="true" duration={500}>
+                            O nas
+                        </ScrollLink>
+                        <ScrollLink to="team" smooth="true" duration={500}>
+                            Zespół
+                        </ScrollLink>
+                        <ScrollLink to="study" smooth="true" duration={500}>
+                            Szkolenia
+                        </ScrollLink>
+                        <ScrollLink to="services" smooth="true" duration={500}>
+                            Usługi
+                        </ScrollLink>
                     </div>
                     <div className={style["address-block"]}>
                         <span>gen. Romualda Traugutta 71</span>
@@ -54,7 +87,13 @@ const Footer = () => {
                 </div>
 
                 <div className={style["cross-line"]} />
-                <a className={style["privacy-policy"]}>Polityka prywatności</a>
+                <Link
+                    to={"/privacy-policy"}
+                    target="_blank"
+                    className={style["privacy-policy"]}
+                >
+                    Polityka prywatności
+                </Link>
             </div>
         </footer>
     );
