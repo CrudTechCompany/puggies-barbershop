@@ -33,12 +33,9 @@ const HeaderContent = (props) => {
                     Szkolenia
                 </Link>
             </div>
-            <Link to="/">
-                <button className={style["logo-button"]}>
-                    <img src={logo} alt="" />
-                </button>
-            </Link>
-
+            <button className={style["logo-button"]}>
+                <img src={logo} alt="" />
+            </button>
             <div className={style["social-block"]}>
                 <Link
                     className={style["header-content__item"]}
